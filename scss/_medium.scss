@@ -1,0 +1,25 @@
+@media (min-width: 600px) and (max-width: 1023px) {
+   #headerWrapper {
+    display: none;
+  }
+  #projects .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #projects .card {
+    max-width: 700px;
+    width: 100%;
+  }
+}
+#navWrapper ul li a img {
+  display: none;
+}
+.card a.btn-learn-more {
+  color: white;
+}
+
+#navWrapper ul li a span {
+  display: block;
+}
+  

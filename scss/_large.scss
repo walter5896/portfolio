@@ -1,0 +1,142 @@
+/* --------------------------- LARGE SCREEN LAYOUT --------------------------- */
+body {
+  display: grid;
+  grid-template-columns: 250px auto; // sidebar + content
+  min-height: 100vh;
+   grid-template-rows: auto auto; 
+}
+
+/* --------------------------- NAVIGATION --------------------------- */
+#navWrapper {
+  grid-row: 1 / span 3;
+  position: fixed;              // sticky sidebar
+  top: 0;
+  left: 0;
+  
+  width: 250px;
+  height: 100vh;
+  background-color: $menuColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;          // horizontally center content
+  padding: 2rem 0;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Navigation List */
+#navWrapper ul {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;   // begin stacking at the top
+  align-items: center;
+  gap: 1rem;                     // <<< controls spacing between items
+  height: auto;                  // no forced full-height stretching
+  padding: 2rem 0;
+  margin: 0;
+}
+
+/* Navigation Items */
+#navWrapper ul li {
+  width: 100%;
+}
+
+/* Links */
+#navWrapper ul li a {
+  display: flex;
+  flex-direction: column;       // icon over text
+  align-items: center;          // center icon and text horizontally
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 0;
+  text-decoration: none;
+  color: $greyColor;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent; // highlight active item
+}
+
+/* Hover & Focus */
+#navWrapper ul li a:hover,
+#navWrapper ul li a:focus {
+  background-color: lighten($menuColor, 10%);
+  color: #FFF2EC;
+  outline: none;
+  border-left: 4px solid $accentColor;
+}
+
+/* Active Item */
+#navWrapper ul li.active a {
+  background-color: darken($menuColor, 5%);
+  color: #FFF2EC;
+  border-left: 4px solid $accentColor;
+}
+
+/* Icon in Link */
+#navWrapper ul li a img {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+/* Icon hover effect */
+#navWrapper ul li a:hover img,
+#navWrapper ul li a:focus img {
+  transform: scale(1.1);
+}
+
+/* Link Text */
+#navWrapper ul li a span {
+  display: block;
+  font-size: 1rem;
+  text-align: center;
+}
+#footerWrapper {
+  grid-column: 2;    // put footer in the main content area
+  grid-row: 2;       // second row
+}
+/* --------------------------- CARDS & SECTIONS --------------------------- */
+.cards {
+  display: flex;
+  flex-direction: row;  // side by side on large screens
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+
+  .card {
+    flex: 1 1 calc(33.333% - 1rem);
+    max-width: calc(33.333% - 1rem);
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+#goals .cards .card {
+  min-height: 400px;
+  flex-direction: column;
+  margin-top: 10%;
+}
+
+#goals .cards .card .btn-learn-more {
+  margin-top: auto;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0.5px; // height of sticky nav
+}
+@media (min-width: 1024px) {
+  #projects .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #projects .card {
+    flex: 1 1 calc(33.333% - 2rem);
+    max-width: calc(33.333% - 2rem);
+  }
+}

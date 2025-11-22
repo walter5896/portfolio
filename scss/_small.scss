@@ -1,0 +1,418 @@
+/* --------------------------- RESET / GLOBAL --------------------------- */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --------------------------- BODY --------------------------- */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: $lightWeight;
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif;
+}
+/* --------------------------- HEADER --------------------------- */
+#headerWrapper {
+  display: grid;
+  
+  grid-template-columns: 50px auto;
+  column-gap: $gutter;
+  align-items: center;
+  
+  padding: 0.5rem $gutter;
+  border-bottom: 1px solid $greyColor;
+
+  img {
+    width: 50px;
+    height: auto;
+  }
+
+  span {
+    font-size: 1.6rem;
+    font-weight: $lightWeight;
+    color: $menuColor;
+  }
+}
+//section styling
+#intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 6rem 1.5rem; // more breathing room
+  background: #FFF9F7; // soft warm neutral
+  border-bottom: 1px solid #e0dede;}
+
+  #education {
+  padding: 6rem 1.5rem;
+  background: #FFF2EC; // warm peach-cream contrast
+  border-bottom: 1px solid #e0dede;
+  text-align: center; }
+
+  #goals {
+  padding: 6rem 1.5rem;
+  background: #e7e2df; // a softened version of #BFB6B1 for readability
+  border-bottom: 1px solid #d4cdca;
+  text-align: center; }
+
+  #skills {
+  padding: 6rem 1.5rem;
+  background: #d9d6d4; // softened tone based on #7F7976
+  border-bottom: 1px solid #c7c3c1;
+  text-align: center; }
+
+  #projects {
+  padding: 6rem 1.5rem;
+  background: #fff9f0; // darkest palette color
+  border-bottom: 1px solid #fcebff;
+  text-align: center; }
+
+
+#contact {
+  padding: 6rem 1.5rem;
+  background: #fbf5ff; // same warm cream as projects section
+  text-align: center;}
+
+
+
+/* --------------------------- NAVIGATION --------------------------- */
+#navWrapper {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #403D3B; // dark section color for nav
+    z-index: 1000;
+  }
+
+  #navWrapper ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem 0;
+    list-style: none;
+    margin: 0;
+  }
+
+  #navWrapper ul li a {
+    display: flex;
+    flex-direction: column; // icon over text
+    align-items: center;
+    justify-content: center;
+    color: #FFFEFF; // white for contrast
+    text-decoration: none;
+    padding: 0.5rem;
+    font-weight: 600;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  #navWrapper ul li a img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0) invert(1);
+    margin-bottom: 0.25rem;
+  }
+
+  #navWrapper ul li a span {
+    
+    display: none;
+  }
+
+  #navWrapper ul li.active a {
+    color: #FFF2EC;
+    border-bottom: 3px solid #BFB6B1;
+  }
+
+  #navWrapper ul li a:hover,
+  #navWrapper ul li a:focus {
+    color: #FFF2EC;
+    border-bottom: 3px solid #7F7976;
+  }
+
+
+
+/* --------------------------- CARDS --------------------------- */
+.cards {
+  display: flex;
+  flex-direction: column; /* stack on small screens */
+  gap: 1rem;
+  margin-top: 1rem;
+
+  .card {
+    background-color: #f9f9f9;
+    border: 1px solid $greyColor;
+    
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      color: $menuColor;
+    }
+
+    p, a {
+      font-size: 1rem;
+      color: black;
+      margin-top: 1rem;
+      line-height: $leading;
+    }
+
+    a {
+      text-decoration:dotted underline;
+      color: #ffffff;
+      
+    }
+  }
+}
+//cards img
+.cards .card img {
+  width: 100%;        // make it fill the card width
+  height: 300px;      // or whatever height works for your layout
+  object-fit: cover;  // crops and scales nicely without distortion
+  border-radius: 8px; // optional: match card corners
+}
+//hero image styles
+.hero-image {
+  width: 100%;
+  
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+}
+// button styles for learn more
+.btn-learn-more {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #2a0043; // slightly darker green
+  color: white;
+  font-weight: 600;
+  width: 95%;
+  position: bottom;
+  border-radius: 5px;
+  text-align: center;
+  
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #175b00;
+  }
+}
+//h6 
+.card h6 {
+  font-size: 1.25rem; // makes it larger
+  font-weight: 600;
+  
+  text-align: center;   // bold
+  margin-bottom: 1rem;
+  color: black;       // adjust if needed
+}
+#goals h2 + p {
+  margin-top: 4rem; // pushes paragraph further below the heading
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  // optional, if you want it centered
+}
+//project cards styles
+#projects .cards {
+  display: flex;
+  flex-wrap: wrap;
+  
+  gap: 2rem;
+  justify-content: center;
+}
+.card a.btn-learn-more {
+  color: white;
+}
+
+#projects .card p {
+  font-size: 0.9rem;       // smaller text
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;     // space between image and paragraph
+  line-height: 1.4;        // adjust spacing for readability
+}
+/* VIEW PROJECT BUTTON */
+.btn-view {
+  display: block;
+  margin-top: auto;
+  padding: 0.6rem 1rem;
+  width: 100%;
+  background-color: #2a0043;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s ease;
+
+  &:hover {
+    background-color: #175b00;
+  }
+}
+/* project images */
+#projects .card img {
+  width: 100%;
+  height: 100%;
+ 
+  object-fit: cover;
+  border-radius: 8px;
+}
+//contact me styling section
+#contact {
+  padding: 3rem $gutter;
+
+  h2 {
+    text-align: center;
+    color: $menuColor;
+    margin-bottom: 2rem;
+  }
+
+  /* Contact Form */
+  .contact-form-wrapper {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+
+        input, textarea {
+          padding: 0.75rem;
+          border: 1px solid $greyColor;
+          border-radius: 5px;
+          font-size: 1rem;
+        }
+
+        textarea {
+          resize: vertical;
+        }
+      }
+
+      .btn-submit {
+        padding: 0.75rem;
+        background-color: #2a0043;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #175b00;
+        }
+      }
+    }
+  }
+
+  /* Social Media Icons */
+  .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    a img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  /* Call Me Section */
+  .call-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  img:hover {
+    transform: scale(1.2);
+  }
+}
+}
+/* --------------------------- MAIN --------------------------- */
+main {
+  section {
+    min-height: 100vh;
+    padding: $gutter;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: $gutter;
+      color: $menuColor;
+    }
+
+    p {
+      color: #333;
+      line-height: $leading;
+    }
+  }
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 95px; // height of your sticky nav
+}
+
+@media (max-width: 600px) {
+  #headerWrapper {
+    display: none;
+  }
+}
+/* --------------------------- FOOTER --------------------------- */
+#footerWrapper {
+  background-color: #2a0043;
+  color: white;
+  text-align: center;
+  padding: 1rem $gutter;
+  font-size: 0.85rem;
+  line-height: $leading;
+
+  a {
+    color: $greyColor;
+    text-decoration: underline;
+  }
+}
