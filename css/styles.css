@@ -671,7 +671,7 @@ main section p {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 95px;
+  scroll-padding-top: 50px;
 }
 
 @media (max-width: 600px) {
